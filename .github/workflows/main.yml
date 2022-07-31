@@ -14,7 +14,12 @@ jobs:
     # Download our master branch
     steps:
     - uses: actions/checkout@v2
-
+    
+    # Install Depenedencies
+    - name: Build
+      run: |
+        npm install
+        
     # Run our deployment command
     - name: Deploying the static website to gh-pages
       run: npm run deploy
